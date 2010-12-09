@@ -7,6 +7,7 @@
     
     <h:head>
         <title>DvdShop 2.0 beta</title>
+        <h:outputStylesheet name="css/design.css"/>
     </h:head>
     
     <h:body>
@@ -15,9 +16,15 @@
         <div id="userform">
             
             <h:form rendered="#{!loginService.loggedIn}">
-                UserName: <h:inputText value="#{loginService.account.userName}" size="10"/>
-                Password: <h:inputSecret value="#{loginService.account.password}" size="10"/>
+                <h:outputLabel for="uname" value="UserName:"/>
+                <h:inputText id="uname" value="#{loginService.account.userName}" size="10"/>
+                <br class="clear"/>
+                
+                <h:outputLabel for="pass" value="Password:"/>
+                <h:inputSecret id="pass" value="#{loginService.account.password}" size="10"/>
+                <br class="clear"/>
                 <h:commandButton value="Login" action="#{loginService.login}"/>
+                <br class="clear"/>
             </h:form>
             <h:form rendered="#{loginService.loggedIn}">
                 <b>#{loginService.account.userName}</b>
