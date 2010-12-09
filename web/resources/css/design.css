@@ -1,56 +1,79 @@
 html {
-	font-family:Arial,Verdana,Tahoma;
-	font-size:11px;
-	color:#666;
+    font-family:Arial,Verdana,Tahoma;
+    font-size:11px;
+    color:#666;
 }
 body {
-	margin:0px;
-	padding:0px;
+    margin:0px;
+    padding:0px;
 }
 input, textarea, select {
-	font-family:Arial, Verdana, Tahoma;
-	font-size:11px;
-	color:#333;
+    font-family:Arial, Verdana, Tahoma;
+    font-size:11px;
+    color:#333;
 }
 textarea {
-	overflow:auto;
+    overflow:auto;
 }
 img {
-	border:0px;
-	outline:none;
+    border:0px;
+    outline:none;
 }
 ul, li {
-	margin:0px;
-	padding:0px;
+    margin:0px;
+    padding:0px;
 }
 a {
-	text-decoration:none;
-	outline:none;
-	color:#99CC00;
+    text-decoration:none;
+    outline:none;
+    color:#99CC00;
 }
 object {
-	outline:none;
-	z-index:0;
-	display:block;
+    outline:none;
+    z-index:0;
+    display:block;
 }
 .clear {
-	clear: both;
-	display: block;
-	font-size: 0;
-	height: 0;
-	line-height: 0;
-	float:none;
-	padding:0;
-	margin:0;
-	display:block;
-	width:0;
-	overflow:hidden;
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    float:none;
+    padding:0;
+    margin:0;
+    display:block;
+    width:0;
+    overflow:hidden;
 }
 #logo {
-	display:block;
-	float:left;
+    display:block;
+    float:left;
+        width:120px;
+    position:absolute;
 }
 #userform {
-    
+    width:300px;
+    margin-left:300px;
+    margin-bottom:100px;
+}
+#userform input {
+    float:right;
+    width:80px;
+    display:block;
+    border:1px solid #ccc;
+    margin-bottom:5px;
 }
 
+#userform label {
+    cursor:pointer;
+    display:block;
+    float:left;
+    width:100px;
+}
+#main {
+    width:700px;
+    margin:auto;
+    margin-top:25px;
+    position:relative;
+}

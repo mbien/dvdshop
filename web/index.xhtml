@@ -11,6 +11,7 @@
     </h:head>
     
     <h:body>
+        <div id="main">
         
         <img id="logo" src="DVDShopLogo.png" alt="nice pic"/>
         <div id="userform">
@@ -19,25 +20,25 @@
                 <h:outputLabel for="uname" value="UserName:"/>
                 <h:inputText id="uname" value="#{loginService.account.userName}" size="10"/>
                 <br class="clear"/>
-                
                 <h:outputLabel for="pass" value="Password:"/>
                 <h:inputSecret id="pass" value="#{loginService.account.password}" size="10"/>
                 <br class="clear"/>
                 <h:commandButton value="Login" action="#{loginService.login}"/>
-                <br class="clear"/>
             </h:form>
             <h:form rendered="#{loginService.loggedIn}">
                 <b>#{loginService.account.userName}</b>
                 <h:commandButton value="Logout" action="#{loginService.logout}"/>
             </h:form>
-
-            <h:form>
-                <h:inputText value="#{index.search.text}" size="10"/>
-                <h:commandButton value="#{bundle.search}" action="#{index.find()}"/>
-            </h:form>
+            <br class="clear"/>
+            
+            <p>
+                <h:form>
+                    <h:inputText value="#{index.search.text}" size="10"/>
+                    <h:commandButton value="#{bundle.search}" action="#{index.find()}"/>
+                </h:form>
+            </p>
         </div>
         <br class="clear"/>
-        
         <p>
             <b>Welcome #{loginService.account.userName}, to the Dvd Webshop 2.0 beta prototype!</b>
         </p>
@@ -86,6 +87,7 @@
                 </h:form>
             </h:column>
         </h:dataTable>
+        </div>
     </h:body>
 </html>
 
