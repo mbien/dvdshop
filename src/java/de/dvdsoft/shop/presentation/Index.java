@@ -26,15 +26,14 @@ public class Index {
     
     private ListDataModel items = null;
     
- 
+
     // login service is a managed bean
-    private Account getAccount() {
+    private LoginService getLoginService() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         Application application = facesContext.getApplication();
         ValueExpression binding = application.getExpressionFactory().createValueExpression(facesContext.getELContext(), "#{loginService}", LoginService.class);
         LoginService service = (LoginService)binding.getValue(facesContext.getELContext());
-        Account account = service.getAccount();
-        return account;
+        return service;
     }
     
     public void find() {
@@ -43,7 +42,7 @@ public class Index {
     
     public void reserveItem() {
         
-        Account account = getAccount();
+        Account account = getLoginService().getAccount();
         Media item = (Media)items.getRowData();
         
         itemService.reserve(account, item);
@@ -51,7 +50,7 @@ public class Index {
     
     public void cancelReservation() {
         
-        Account account = getAccount();
+        Account account = getLoginService().getAccount();
         Media item = (Media)items.getRowData();
         
         itemService.cancelReservation(account, item);
@@ -59,7 +58,7 @@ public class Index {
 
     public boolean isItemReserved() {
         
-        Account account = getAccount();
+        Account account = getLoginService().getAccount();
         Media item = (Media)items.getRowData();
 
         return itemService.isReserved(account, item);
@@ -83,6 +82,10 @@ public class Index {
             items = new ListDataModel(itemService.findAll());
         }
         return items;
+    }
+
+    public ItemService getItemService() {
+        return itemService;
     }
 
     public Search getSearch() {

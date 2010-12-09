@@ -10,6 +10,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/*
+INSERT INTO APP.ACCOUNT (USERNAME, PASSWORD) VALUES ('duke', 'duke');
+INSERT INTO APP.ACCOUNT (USERNAME, PASSWORD) VALUES ('hugo', 'hugo');
+ */
+
 /**
  *
  * @author mbien
