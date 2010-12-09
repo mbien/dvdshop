@@ -53,8 +53,8 @@ object {
     position:absolute;
 }
 #userform {
-    width:300px;
-    margin-left:300px;
+    width:200px;
+    margin-left:150px;
     margin-bottom:100px;
 }
 #userform input {
