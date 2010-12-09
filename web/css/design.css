@@ -1,0 +1,57 @@
+html {
+	font-family:Arial,Verdana,Tahoma;
+	font-size:11px;
+	color:#666;
+}
+body {
+	background:url('../img/background.png') repeat-x #999;
+	margin:0px;
+	padding:0px;
+}
+input, textarea, select {
+	font-family:Arial, Verdana, Tahoma;
+	font-size:11px;
+	color:#333;
+}
+textarea {
+	overflow:auto;
+}
+img {
+	border:0px;
+	outline:none;
+}
+ul, li {
+	margin:0px;
+	padding:0px;
+}
+a {
+	text-decoration:none;
+	outline:none;
+	color:#99CC00;
+}
+object {
+	outline:none;
+	z-index:0;
+	display:block;
+}
+.clear {
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	float:none;
+	padding:0;
+	margin:0;
+	display:block;
+	width:0;
+	overflow:hidden;
+}
+#logo {
+	display:block;
+	float:left;
+}
+#userform {
+    
+}
+
