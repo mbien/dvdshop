@@ -1,0 +1,64 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xml:lang="de_DE" lang="de_DE">
+
+    <f:view>
+
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>DVD Shop - beta</title>
+            <h:outputStylesheet name="css/design.css"/>
+            <h:outputScript name="javascript/jquery-1.4.4.min.js" />
+            <h:outputScript name="javascript/jquery-plugins/imageSlideShow.js" />
+            <h:outputScript name="javascript/init.js" />
+        </h:head>
+
+        <h:body>
+
+            <div id="main">
+
+                <div id="header">
+                    <div class="container">
+                        <div id="teaser">
+                            <h1><a href="/"><span>Dvd</span><sub>Shop</sub><span class="hidden">Home</span></a></h1>
+                            <ul id="menu">
+                                <ui:include src="menu.xhtml"/>
+                            </ul>
+                        </div>
+                        <div id="infobox">
+                            <ui:include src="userbox.xhtml">
+                                <ui:param name="loginService" value="#{loginService}"/>
+                            </ui:include>
+
+                        </div>
+                        <br class="clear" />
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="searchbox">
+                        <ui:include src="searchbox.xhtml">
+                                <ui:param name="index" value="#{index}"/>
+                                <ui:param name="bundle" value="#{bundle}"/>
+                        </ui:include>
+                    </div>
+                    <div id="content">
+                        <ui:insert name="content"/>
+                    </div>
+
+                    <div id="footer">
+                        <p>&copy; 2010 by mbien, blip, crein und mschre - <a href="#">Impressum</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </h:body>>
+    </f:view>
+</html>
+

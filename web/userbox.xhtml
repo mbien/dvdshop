@@ -1,0 +1,30 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Everything above this line in this file is Ignored -->
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form rendered="#{!loginService.loggedIn}">
+        <fieldset>
+            <fieldset>
+                <h:inputText id="uname" value="Benutzername" />
+                <h:inputSecret id="pass" value="Passwort" />
+            </fieldset>
+            <h:commandButton styleClass="submit" value="Login" action="#{loginService.login}"/>
+            <br class="clear" />
+        </fieldset>
+    </h:form>
+    <f:verbatim rendered="#{loginService.loggedIn}">
+        <h2>
+            #{loginService.account.userName}
+            <span>(<h:outputLink value="#{loginService.logout}" />)</span>
+        </h2>
+    </f:verbatim>
+
+</ui:composition>
+

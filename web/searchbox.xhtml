@@ -1,0 +1,20 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Everything above this line in this file is Ignored -->
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form prependId="false">
+        <fieldset>
+            <h:inputText value="#{index.search.text}" size="10" id="searchbutton" />
+            <h:commandButton value="#{bundle.search}" action="#{index.find()}" styleClass="submit" />
+            <br class="clear" />
+        </fieldset>
+    </h:form>
+
+</ui:composition>

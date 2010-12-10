@@ -1,93 +1,65 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <!-- Everything above this line in this file is Ignored -->
+  <ui:composition 
+      template="layout.xhtml"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
-    
-    <h:head>
-        <title>DvdShop 2.0 beta</title>
-        <h:outputStylesheet name="css/design.css"/>
-    </h:head>
-    
-    <h:body>
-        <div id="main">
-        
-        <img id="logo" src="DVDShopLogo.png" alt="nice pic"/>
-        <div id="userform">
-            
-            <h:form rendered="#{!loginService.loggedIn}">
-                <h:outputLabel for="uname" value="UserName:"/>
-                <h:inputText id="uname" value="#{loginService.account.userName}" size="10"/>
-                <br class="clear"/>
-                <h:outputLabel for="pass" value="Password:"/>
-                <h:inputSecret id="pass" value="#{loginService.account.password}" size="10"/>
-                <br class="clear"/>
-                <h:commandButton value="Login" action="#{loginService.login}"/>
-            </h:form>
-            <h:form rendered="#{loginService.loggedIn}">
-                <b>#{loginService.account.userName}</b>
-                <h:commandButton value="Logout" action="#{loginService.logout}"/>
-            </h:form>
-            <br class="clear"/>
-            
-            <p>
-                <h:form>
-                    <h:inputText value="#{index.search.text}" size="10"/>
-                    <h:commandButton value="#{bundle.search}" action="#{index.find()}"/>
-                </h:form>
-            </p>
-        </div>
-        <br class="clear"/>
-        <p>
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+      <ui:define name="content">
+
+      <p>
             <b>Welcome #{loginService.account.userName}, to the Dvd Webshop 2.0 beta prototype!</b>
         </p>
-        <h:dataTable value="#{index.items}" var="item" border="1" cellpadding="2" cellspacing="10" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+          <h:dataTable value="#{index.items}" var="item" border="1" cellpadding="2" cellspacing="10" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.media_title}"/>
                 </f:facet>
                 <h:outputText value="#{item.title}"/>
             </h:column>
-                
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.media_studio}"/>
                 </f:facet>
                 <h:outputText value="#{item.studio}"/>
             </h:column>
-                
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.media_price}"/>
                 </f:facet>
                 <h:outputText value="#{item.price}€"/>
             </h:column>
-                
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="#{bundle.media_kind}"/>
                 </f:facet>
                 <h:outputText value="#{item.kind}"/>
             </h:column>
-                
+
             <h:column rendered="#{loginService.loggedIn}">
                 <f:facet name="header">
                     <h:outputText value="Status"/>
                 </f:facet>
-                
+
                 <h:form rendered="#{index.reserveable}">
                     <h:commandButton value="reserve" action="#{index.reserveItem()}"/>
                 </h:form>
-                
+
                 <h:outputText value="#{bundle.media_not_available}" rendered="#{index.notAvailableAndNotReserved}"/>
-                
+
                 <h:form rendered="#{index.isItemReserved()}">
                     <h:commandButton value="cancel" action="#{index.cancelReservation()}"/>
                 </h:form>
             </h:column>
         </h:dataTable>
-        </div>
-    </h:body>
-</html>
+      </ui:define>
+  </ui:composition>
 

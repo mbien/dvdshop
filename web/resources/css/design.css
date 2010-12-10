@@ -1,79 +1,426 @@
 html {
-    font-family:Arial,Verdana,Tahoma;
-    font-size:11px;
-    color:#666;
+	font-family:Arial,Verdana,Tahoma;
+	font-size:11px;
+	color:#666;
 }
 body {
-    margin:0px;
-    padding:0px;
+	background:url('../img/bg.png') repeat-x #999;
+	margin:0px;
+	padding:0px;
 }
 input, textarea, select {
-    font-family:Arial, Verdana, Tahoma;
-    font-size:11px;
-    color:#333;
+	font-family:Arial, Verdana, Tahoma;
+	font-size:11px;
+	color:#333;
+	border:1px solid #ccc;
+}
+input.submit, label {
+    cursor:pointer;
+    font-weight:bold;
+}
+fieldset, legend, form {
+    border:none;
+    margin:0;
+    padding:0;
 }
 textarea {
-    overflow:auto;
+	overflow:auto;
 }
 img {
-    border:0px;
-    outline:none;
+	border:0px;
+	outline:none;
 }
 ul, li {
-    margin:0px;
-    padding:0px;
+	margin:0px;
+	padding:0px;
 }
 a {
-    text-decoration:none;
-    outline:none;
-    color:#99CC00;
+	text-decoration:none;
+	outline:none;
+	color:#00ccFF;
 }
 object {
-    outline:none;
-    z-index:0;
-    display:block;
+	outline:none;
+	z-index:0;
+	display:block;
+}
+h1 {
+    margin:0;
+    padding:0;
 }
 .clear {
-    clear: both;
-    display: block;
-    font-size: 0;
-    height: 0;
-    line-height: 0;
-    float:none;
-    padding:0;
-    margin:0;
-    display:block;
-    width:0;
-    overflow:hidden;
-}
-#logo {
-    display:block;
-    float:left;
-        width:120px;
-    position:absolute;
-}
-#userform {
-    width:200px;
-    margin-left:150px;
-    margin-bottom:100px;
-}
-#userform input {
-    float:right;
-    width:80px;
-    display:block;
-    border:1px solid #ccc;
-    margin-bottom:5px;
-}
-
-#userform label {
-    cursor:pointer;
-    display:block;
-    float:left;
-    width:100px;
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	float:none;
+	padding:0;
+	margin:0;
+	display:block;
+	width:0;
+	overflow:hidden;
 }
 #main {
-    width:700px;
-    margin:auto;
-    margin-top:25px;
+    margin-bottom:25px;
+}
+.container {
+	width:850px;
+	margin:0 auto;
+	position:relative;
+	padding-top:75px;
+}
+#header {
+    background:#3f3f3f;
+}
+#header .container {
+    background:#333;
+    border:1px solid #000;
+    border-top:none;
+    z-index:1;
+    padding:0;
+}
+#teaser {
+    padding:10px 0 0 0;
+    width:500px;
+    float:left;
+}
+#teaser h1 {
+    font-size:28px;
+    margin:0;
+    margin-left:10px;
+}
+#teaser h1 a {
+    color:#666;
+    display:block;
+    height:35px;
+    width:120px;
     position:relative;
+}
+#teaser h1 a .hidden {
+    display:none;
+    position:absolute;
+    right:0;
+    top:0;
+    font-size:10px;
+    text-transform:uppercase;
+    color:#00CCFF;
+}
+#teaser h1 a:hover span {
+    border-bottom:1px solid #ff9900;
+}
+#teaser h1 a:hover .hidden {
+    display:inline;
+    border-bottom:0;
+}
+#teaser h1 span {
+    color:#FF9900;
+    font-weight:normal;
+    margin:0;
+    text-transform:uppercase;
+}
+#menu {
+    height:25px;
+    list-style:none;
+    margin-top:10px;
+}
+#menu li {
+    float:left;
+    border-right:1px solid #727272;
+}
+#menu li a, #menu li span {
+    display:block;
+    width:124px;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align:center;
+    height:18px;
+    padding-top:7px;
+    color:#fff;
+}
+#menu li a:hover, #menu li.active span {
+    background:#3f3f3f;
+}
+#infobox {
+    width:350px;
+    float:right;
+    position:relative;
+}
+#infobox h2 {
+    position:absolute;
+    right:10px;
+    color:#00CCFF;
+    background:url('../img/user.png') left center no-repeat;
+    padding-left:20px;
+}
+#infobox h2 span {
+    color:#666;
+    font-size:12px;
+}
+#infobox h2 span a {
+    color:#666;
+
+}
+#infobox h2 span a:hover {
+    text-decoration:underline;
+}
+#infobox fieldset {
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:170px;
+    background:url('../img/users.png') 130px top no-repeat;
+}
+#infobox input {
+    display:block;
+    margin-bottom:5px;
+    width:100px;
+}
+#infobox fieldset fieldset {
+    width:110px;
+    float:left;
+    position:static;
+    background-image:none;
+    width:auto;
+}
+#infobox fieldset .submit {
+    margin-bottom:0;
+    width:60px;
+    float:right;
+    margin-top:22px;
+}
+#content {
+    background:#fff;
+    padding:25px;
+    color:#333;
+    font-size:12px;
+}
+#content a:hover {
+    text-decoration:underline;
+}
+#welcome {
+    width:450px;
+    float:left;
+}
+#news {
+    list-style:none;
+    width:450px;
+    height:400px;
+}
+#news li {
+    display:none;
+    width:450px;
+    height:400px;
+    overflow:hidden;
+    position:relative;
+}
+#news li.active {
+    display:block;
+}
+#news li img {
+    display:block;
+    position:absolute;
+    z-index:1;
+}
+#news li .description {
+    position:absolute;
+    bottom:0;
+    left:0;
+    background:url('../img/news_desc_bg.png');
+    color:#fff;
+    font-size:11px;
+    padding:5px 10px 5px 10px;
+    z-index:10;
+    width:450px;
+}
+#news li h1 {
+    font-size:12px;
+}
+#news li p {
+    margin:5px 0;
+}
+#content #news a.more {
+    margin-bottom:5px;
+    padding-right:12px;
+    background:url('../img/arrow_right.png') right center no-repeat;
+    cursor:pointer;
+}
+#offers {
+    width:200px;
+    float:right;
+    background:url('../img/offers_background.jpg') center top no-repeat;
+    padding-top:200px;
+}
+#offers ul {
+    list-style:none;
+}
+#offers li {
+    border-bottom:1px solid #333;
+    padding:10px 0;
+}
+#content #offers ul.checklist {
+    padding-left:10px;
+    margin-bottom:10px;
+}
+#content #offers .checklist li {
+    background-image:url('../img/checkmark_small.png');
+    font-size:12px;
+    line-height:1.4;
+    border:none;
+    padding:0;
+    padding-left:16px;
+}
+#content .price {
+    width:145px;
+    margin:0 auto;
+}
+#content .price .old {
+    float:left;
+    width:45px;
+}
+#content .price .new {
+    float:right;
+    width:95px;
+    padding-left:5px;
+}
+#content .money {
+    color:#dc0303;
+    font-weight:bold;
+    font-size:22px;
+}
+#content .price .new .money {
+    position:relative;
+}
+#content .price .new .money .note {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    display:block;
+    font-size:12px;
+}
+#content  .money span {
+    font-size:12px;
+    vertical-align:top;
+}
+#content .new .money {
+    font-size:44px;
+}
+#content .new .money span {
+    font-size:22px;
+}
+#content .old .note {
+    font-weight:bold;
+    font-size:12px;
+    color:#666;
+}
+#content .old .money {
+    text-decoration:line-through;
+}
+#content  ul.checklist {
+    list-style:none;
+    font-size:14px;
+    color:#666;
+    font-weight:bold;
+}
+#content  .checklist li {
+   line-height:1.8;
+   background:url('../img/checkmark.png') left center no-repeat;
+   padding-left:20px;
+}
+#content #media {
+    list-style:none;
+    width:450px;
+    float:left;
+}
+#content #sort-options {
+    width:200px;
+    float:right;
+}
+#sort-options label {
+    display:block;
+}
+#sort-options label.checkbox {
+    display:inline;
+    line-height:1.5;
+}
+#sort-options select {
+    display:block;
+    width:200px;
+    margin-bottom:10px;
+}
+#sort-options input {
+    float:right;
+}
+#sort-options .submit {
+    display:block;
+    width:60px;
+    margin:10px auto;
+    float:none;
+}
+#pagination span {
+    display:block;
+    float:left;
+    width:45px;
+    text-align:center;
+    padding-top:4px;
+}
+#content #pagination ul {
+    list-style:none;
+    float:left;
+    margin:0 8px 0 10px;
+}
+#pagination li {
+    float:left;
+}
+#pagination li a, #pagination li span {
+    display:block;
+    width:20px;
+    text-align:center;
+    border:1px solid #727272;
+    margin-right:5px;
+    height:16px;
+    padding-top:4px;
+    font-weight:bold;
+}
+#pagination li a:hover, #pagination li.active span {
+    background:#e7e7e7;
+    text-decoration:none;
+}
+#searchbox {
+    position:absolute;
+    right:-1px;
+    top:-1px;
+    background:#333;
+    width:170px;
+    height:20px;
+    border:1px solid #000;
+    border-top:none;
+    padding:2px 10px 2px 10px;
+    z-index:2;
+}
+#searchbutton {
+    width:82px;
+    float:left;
+    display:block;
+    background:url('../img/search.png') 2px center no-repeat #fff;
+    padding-left:18px;
+}
+#searchbox .submit {
+    width:60px;
+    float:right;
+    display:block;
+}
+#footer {
+    margin-top:8px;
+    padding-left:10px;
+    color:#fff;
+}
+#footer a {
+    color:#fff;
+}
+#footer a:hover {
+    text-decoration:underline;
+}
+#footer p {
+    margin:0;
 }
