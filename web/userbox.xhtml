@@ -12,8 +12,8 @@
     <h:form rendered="#{!loginService.loggedIn}">
         <fieldset>
             <fieldset>
-                <h:inputText id="uname" value="Benutzername" />
-                <h:inputSecret id="pass" value="Passwort" />
+                <h:inputText id="username" value="#{loginService.account.userName}" alt="Benutzername" />
+                <h:inputSecret id="password" value="#{loginService.account.password}" />
             </fieldset>
             <h:commandButton styleClass="submit" value="Login" action="#{loginService.login}"/>
             <br class="clear" />
@@ -22,7 +22,11 @@
     <f:verbatim rendered="#{loginService.loggedIn}">
         <h2>
             #{loginService.account.userName}
-            <span>(<h:outputLink value="#{loginService.logout}" />)</span>
+            <!-- TODO: Logout link does not work
+                 outputLink can’t call a bean method and commandLink works
+                 only with a form (POST HTTP method) and javascript (!)
+            -->
+            <span>(<h:outputLink value="#{loginService.login}">Logout</h:outputLink>)</span>
         </h2>
     </f:verbatim>
 
